@@ -1,16 +1,24 @@
 package unbreakk1;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Main
 {
-    public static void main(String[] args) {
+    public static void main(String[] args)
+    {
         System.out.println("Hello and welcome!");
 
-        // Example usage of reverseString method
         String original = "olleH";
         String reversed = reverseString(original);
 
         System.out.println("Original: " + original);
         System.out.println("Reversed: " + reversed);
+
+        int n = 10; // Generate the first 10 prime numbers
+        List<Integer> primes = generatePrimes(n);
+
+        System.out.println("The first " + n + " prime numbers are: " + primes);
     }
 
     public static String reverseString(String input)
@@ -41,8 +49,37 @@ public class Main
             left++;
             right--;
         }
-
         return true; // String is a palindrome
+    }
 
+    public static List<Integer> generatePrimes(int n)
+    {
+        List<Integer> primes = new ArrayList<>();
+        int number = 2; // The first prime number
+
+        while (primes.size() < n)
+        {
+            if (isPrime(number)) {
+                primes.add(number);
+            }
+            number++;
+        }
+
+        return primes;
+    }
+
+    // Helper method to check if a number is prime
+    private static boolean isPrime(int num)
+    {
+        if (num < 2) {
+            return false;
+        }
+        for (int i = 2; i <= Math.sqrt(num); i++)
+        {
+            if (num % i == 0)
+                return false;
+
+        }
+        return true;
     }
 }
