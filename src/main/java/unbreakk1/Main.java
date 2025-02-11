@@ -9,13 +9,20 @@ public class Main
     {
         System.out.println("Hello and welcome!");
 
-        String original = "olleH";
+        String original = "Cookie cutter program!";
         String reversed = reverseString(original);
 
         System.out.println("Original: " + original);
         System.out.println("Reversed: " + reversed);
 
-        int n = 10; // Generate the first 10 prime numbers
+        System.out.println(isPalindrome("anna"));
+        System.out.println(isPalindrome("hello"));
+        System.out.println(isPalindrome("racecar"));
+        System.out.println(isPalindrome(""));
+        System.out.println(isPalindrome(null));
+
+
+        int n = 10;
         List<Integer> primes = generatePrimes(n);
 
         System.out.println("The first " + n + " prime numbers are: " + primes);
@@ -24,7 +31,7 @@ public class Main
     public static String reverseString(String input)
     {
         if (input == null || input.isEmpty())
-            return input; // Return the input as is if it's null or empty
+            return input;
 
 
         StringBuilder reversed = new StringBuilder(input);
@@ -42,20 +49,19 @@ public class Main
 
         while (left < right)
         {
-            // Compare characters at the two ends
             if (input.charAt(left) != input.charAt(right))
-                return false; // If characters differ, it's not a palindrome
+                return false;
 
             left++;
             right--;
         }
-        return true; // String is a palindrome
+        return true;
     }
 
     public static List<Integer> generatePrimes(int n)
     {
         List<Integer> primes = new ArrayList<>();
-        int number = 2; // The first prime number
+        int number = 2;
 
         while (primes.size() < n)
         {
