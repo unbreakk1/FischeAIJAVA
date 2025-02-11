@@ -108,7 +108,6 @@ public class Main
             }
             number++; // Increment number to check the next.
         }
-
         // Return the filled list of prime numbers.
         return primes;
     }
@@ -132,7 +131,6 @@ public class Main
             if (num % i == 0)
                 return false;
         }
-
         // The number passed all tests; it is prime.
         return true;
     }
